@@ -93,21 +93,21 @@ class TasksController extends Controller
      */
     public function update($id, Request $request)
     {
-        //
         $task = \Crud\Task::findOrFail($id);
 
         $this->validate($request, [
-            'title'         => 'required',
-            'description'   => 'required'
+            'title' => 'required',
+            'description' => 'required'
         ]);
 
         $input = $request->all();
-        $task->fill($input)->saved();
 
+        $task->fill($input);
+        $task->push();
         Session::flash('flash_message', 'Task successfully added!');
 
         return redirect()->back();
-
+//        return 'holas';
     }
 
     /**
