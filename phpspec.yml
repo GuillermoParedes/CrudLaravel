@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Crud
+        psr4_prefix: Crud
+        src_path: app
