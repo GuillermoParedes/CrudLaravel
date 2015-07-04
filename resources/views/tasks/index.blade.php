@@ -10,9 +10,18 @@
     @foreach($tasks as $task)
         <h3>{{$task->title}}</h3>
         <p>{{$task->description}}</p>
-        <p>
-            <a class="btn btn-info" href="{{ route('tasks.show',$task->id) }}">View Task</a>
-            <a class="btn btn-primary" href="{{ route('tasks.edit',$task->id) }}">Edit Task</a>
-        </p>
+        <div class="row">
+            <div class="col-lg-6 text-right">
+                <p>
+                    <a class="btn btn-info" href="{{ route('tasks.show',$task->id) }}">View Task</a>
+                    <a class="btn btn-primary" href="{{ route('tasks.edit',$task->id) }}">Edit Task</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-right">
+                {!! Form::open(['method' => 'DELETE', 'route'  => ['tasks.destroy', $task->id] ]) !!}
+                {!! Form::submit('Delete this task?', ['class' =>'btn btn-danger']) !!}
+                {!! form::close() !!}
+            </div>
+        </div>
     @endforeach
 @stop

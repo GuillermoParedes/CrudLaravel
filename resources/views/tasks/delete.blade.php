@@ -14,7 +14,7 @@
 
         <div class="col-md-6 text-right">
             {!! Form::open(['method' => 'DELETE', 'route'  => ['tasks.destroy', $task->id] ]) !!}
-            {!! Form::submit('Delete this task?', ['class' =>'btn btn-danger']) !!}
+            {!! Form::submit('Delete this tasddk?', ['class' =>'btn btn-danger']) !!}
             {!! form::close() !!}
 
         </div>

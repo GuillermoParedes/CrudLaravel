@@ -121,6 +121,9 @@ class TasksController extends Controller
         //
         $task = \Crud\Task::findOrFail($id);
 
+
+
+
         $task->delete();
 
         Session::flash('flash_message', 'Task successfully deleted!');
